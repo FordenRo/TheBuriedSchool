@@ -1,11 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://2kgpa0w0qjga"]
+[gd_scene load_steps=6 format=3 uid="uid://2kgpa0w0qjga"]
 
-[ext_resource type="PackedScene" uid="uid://do565nr1dup1y" path="res://models/school/school.blend" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://do565nr1dup1y" path="res://models/school/School.blend" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://ddjarkthuhiou" path="res://player/player.tscn" id="2_yqjtg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yqjtg"]
+sky_top_color = Color(0.42438, 0.495807, 0.595202, 1)
+
+[sub_resource type="Sky" id="Sky_lnu2h"]
+sky_material = SubResource("ProceduralSkyMaterial_yqjtg")
+
+[sub_resource type="Environment" id="Environment_lbhrr"]
+background_mode = 2
+sky = SubResource("Sky_lnu2h")
 
 [node name="Node3D" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("2_yqjtg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.10106, -0.70356, 4.85044)
 
-[node name="school" parent="." instance=ExtResource("1_uwrxv")]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lbhrr")
+
+[node name="School" parent="." instance=ExtResource("2_lnu2h")]

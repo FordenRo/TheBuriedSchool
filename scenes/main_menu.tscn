@@ -20,21 +20,22 @@ grow_vertical = 2
 theme = ExtResource("1_ekxnf")
 script = ExtResource("2_bqqt6")
 
-[node name="Label" type="Label" parent="."]
+[node name="Title" type="Label" parent="."]
 layout_mode = 0
-offset_left = 85.0
-offset_top = 228.0
-offset_right = 258.0
-offset_bottom = 278.0
-text = "UNTITLED"
+offset_left = 76.0
+offset_top = 233.0
+offset_right = 389.0
+offset_bottom = 283.0
+text = "The Buried School"
 label_settings = SubResource("LabelSettings_wu84c")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 90.0
-offset_top = 325.0
-offset_right = 249.0
-offset_bottom = 432.0
+offset_left = 76.0
+offset_top = 344.0
+offset_right = 260.0
+offset_bottom = 463.0
+theme_override_constants/separation = 10
 
 [node name="Play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
