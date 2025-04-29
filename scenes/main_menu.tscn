@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://b541a2v36qfr6"]
+
+[ext_resource type="Theme" uid="uid://cdig0arxkwqjx" path="res://themes/menu.tres" id="1_ekxnf"]
+[ext_resource type="Script" uid="uid://bjc8xwwt7w5pq" path="res://scenes/main_menu.gd" id="2_bqqt6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wu84c"]
+font_size = 36
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ln24"]
+font_size = 15
+font_color = Color(1, 1, 1, 0.635294)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ekxnf")
+script = ExtResource("2_bqqt6")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 228.0
+offset_right = 258.0
+offset_bottom = 278.0
+text = "UNTITLED"
+label_settings = SubResource("LabelSettings_wu84c")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 325.0
+offset_right = 249.0
+offset_bottom = 432.0
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="Settings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Exit"
+
+[node name="Version" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 40.0
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_8ln24")
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
