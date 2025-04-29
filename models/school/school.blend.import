@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://do565nr1dup1y"
-path="res://.godot/imported/Class303.blend-03445353e0db9e4932baa0bd879de30f.scn"
+path="res://.godot/imported/school.blend-87cb876c6fbf8df90dc78aed11523e39.scn"
 
 [deps]
 
-source_file="res://models/school/Class303.blend"
-dest_files=["res://.godot/imported/Class303.blend-03445353e0db9e4932baa0bd879de30f.scn"]
+source_file="res://models/school/school.blend"
+dest_files=["res://.godot/imported/school.blend-87cb876c6fbf8df90dc78aed11523e39.scn"]
 
 [params]
 
@@ -32,7 +32,13 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Plane": {
+"generate/physics": true
+}
+}
+}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true
