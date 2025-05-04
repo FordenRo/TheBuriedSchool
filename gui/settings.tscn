@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2a2b2hd6i11t"]
+
+[ext_resource type="Script" uid="uid://b0o20d04mu4t" path="res://gui/settings.gd" id="1_dtslm"]
+
+[node name="Settings" type="TabContainer"]
+offset_left = 495.0
+offset_top = 165.0
+offset_right = 951.0
+offset_bottom = 467.0
+current_tab = 0
+script = ExtResource("1_dtslm")
+
+[node name="Graphics" type="TabBar" parent="."]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Graphics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Graphics/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Graphics/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ShowFPS" type="CheckButton" parent="Graphics/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+button_pressed = true
+text = "Show FPS"
+flat = true
+
+[connection signal="toggled" from="Graphics/MarginContainer/ScrollContainer/VBoxContainer/ShowFPS" to="." method="_on_show_fps_toggled"]

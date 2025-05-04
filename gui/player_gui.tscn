@@ -1,15 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://c22swbwbu232w"]
+[gd_scene load_steps=7 format=3 uid="uid://c22swbwbu232w"]
 
+[ext_resource type="Script" uid="uid://dcyi25i10un7h" path="res://gui/fps_label.gd" id="1_1jbbs"]
 [ext_resource type="Theme" uid="uid://cdig0arxkwqjx" path="res://themes/menu.tres" id="1_asob6"]
 [ext_resource type="Script" uid="uid://bcxswsnualbh8" path="res://gui/pause_menu.gd" id="1_q2gd7"]
+[ext_resource type="PackedScene" uid="uid://c2a2b2hd6i11t" path="res://gui/settings.tscn" id="4_rxvvh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1jbbs"]
+font_size = 14
+font_color = Color(1, 1, 1, 0.584314)
 
 [sub_resource type="LabelSettings" id="LabelSettings_2yghs"]
 font_size = 34
 
 [node name="PlayerGui" type="CanvasLayer"]
 
+[node name="FPSLabel" type="Label" parent="."]
+process_mode = 3
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 50.0
+offset_bottom = 33.0
+text = "FPS: 0"
+label_settings = SubResource("LabelSettings_1jbbs")
+script = ExtResource("1_1jbbs")
+
 [node name="PauseMenu" type="Control" parent="."]
 process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -56,6 +73,14 @@ text = "Settings"
 [node name="ToMenu" type="Button" parent="PauseMenu/VBoxContainer"]
 layout_mode = 2
 text = "Exit to menu"
+
+[node name="Settings" parent="PauseMenu" instance=ExtResource("4_rxvvh")]
+visible = false
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 456.0
+offset_bottom = 302.0
 
 [connection signal="pressed" from="PauseMenu/VBoxContainer/Resume" to="PauseMenu" method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/Settings" to="PauseMenu" method="_on_settings_pressed"]

@@ -1,9 +1,9 @@
-class_name PlayerCharacter
 extends CharacterBody3D
+class_name PlayerCharacter
 
-@export var SPEED := 2.0
-@export var SPRINT_SPEED := 2.5
-@export var JUMP_FORCE := 1.0
+@export var SPEED := 1.6
+@export var SPRINT_SPEED := 2.2
+@export var JUMP_FORCE := 3.0
 @export var mouse_sensivity := 0.1
 
 @onready var head := $Head

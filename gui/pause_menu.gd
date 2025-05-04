@@ -37,7 +37,7 @@ func _on_resume_pressed() -> void:
 
 
 func _on_settings_pressed() -> void:
-	pass # Replace with function body.
+	$Settings.visible = not $Settings.visible
 
 
 func _on_to_menu_pressed() -> void:

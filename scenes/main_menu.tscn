@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b541a2v36qfr6"]
+[gd_scene load_steps=6 format=3 uid="uid://b541a2v36qfr6"]
 
 [ext_resource type="Theme" uid="uid://cdig0arxkwqjx" path="res://themes/menu.tres" id="1_ekxnf"]
 [ext_resource type="Script" uid="uid://bjc8xwwt7w5pq" path="res://scenes/main_menu.gd" id="2_bqqt6"]
+[ext_resource type="PackedScene" uid="uid://c2a2b2hd6i11t" path="res://gui/settings.tscn" id="3_bqqt6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wu84c"]
 font_size = 36
@@ -58,6 +59,14 @@ offset_top = -23.0
 offset_right = 40.0
 grow_vertical = 0
 label_settings = SubResource("LabelSettings_8ln24")
+
+[node name="Settings" parent="." instance=ExtResource("3_bqqt6")]
+visible = false
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 456.0
+offset_bottom = 302.0
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
